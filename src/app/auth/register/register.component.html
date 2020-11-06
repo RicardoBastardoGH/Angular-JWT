@@ -1,0 +1,79 @@
+
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body bg-light">
+                
+                <form [formGroup]="registerForm" (ngSubmit)="registrarPersona()">
+                    <fieldset>
+
+                      <legend class="text-center">Registro</legend>
+
+                      <div class="form-group">
+                        <label for="exampleInputUsername">Usuario</label>
+                        <input type="text" class="form-control" id="exampleInputNombre" placeholder="Usuario" 
+                                formControlName="usuario">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Correo</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" 
+                                formControlName="email">
+                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con nadie mas</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" 
+                                formControlName="password">
+                      </div>
+
+                      <div class="row">
+                      <div class="form-group col">
+                        <label for="exampleInputNombre">Nombre</label>
+                        <input type="text" class="form-control" id="exampleInputNombre3" placeholder=" Primer Nombre" 
+                                formControlName="nombre">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col">
+                        <label for="exampleInputApellido">Apellido</label>
+                        <input type="text" class="form-control" id="exampleInputApellido3" placeholder="Primer Apellido" 
+                                formControlName="apellido">
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="form-group col">
+                          <label for="dateOfBirth">Fecha de Nacimiento</label>
+                          <input id="dateOfBirth2" name="dateOfBirth" placeholder="Fecha de Nacimiento"
+                                  type="text" bsDatepicker [bsConfig]="datePickerConfig"
+                                  class="form-control mb-3" 
+                                  formControlName="fechaNacimiento" />
+
+                        </div>
+
+                        <div class="form-group col">
+                          <label for="exampleInputTelefono">Telefono</label>
+                          <input type="phone" class="form-control" id="exampleInputTelefono"  placeholder="Telefono" 
+                                  formControlName="telefono">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputAddress">Direccion</label>
+                        <input type="text" class="form-control" id="exampleInputApellido" placeholder="Direccion" 
+                                formControlName="direccion">
+                      </div>
+
+                      <button type="submit"  [disabled]="!registerForm.valid" class="btn btn-primary btn-large btn-block">Registrarse</button>
+                      <!-- <button type="submit"  class="btn btn-primary btn-large btn-block">Registrarse</button> -->
+                    </fieldset>
+                  </form>  
+
+                  <div class="form-group mt-3">
+                    <p>Ya tienes una cuenta?<a [routerLink]="['/login']" routerLinkActive="router-link-active" > Login</a></p>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+

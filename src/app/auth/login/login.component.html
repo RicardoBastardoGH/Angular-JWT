@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body bg-light">
+                
+              <div class="alert alert-dismissible alert-primary" *ngIf="hasError" >
+                <strong>Error!</strong> usuario y contraseña invalidos 
+              </div>
+
+              
+                 <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <fieldset>
+                      <legend class="text-center">Login</legend>
+ 
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Correo</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" 
+                                formControlName="email">
+                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con nadie mas</small>
+                      </div>
+                      <!-- 
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Usuario</label>
+                        <input type="text" class="form-control" id="exampleInputUsername"  placeholder="Ingrese Usuario"
+                                formControlName="username">
+                      </div>
+                       -->
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                                formControlName="password">
+                      </div>
+                     
+                      <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Iniciar Sesion</button>
+                    </fieldset>
+                  </form>
+                  <div class="form-group mt-3">
+                    <p>No tienes cuenta aun?<a [routerLink]="['/register']" routerLinkActive="router-link-active" > Registrate</a></p>
+                    <!-- <p>Olvidaste tu contraseña?<a [routerLink]="['/recuperacion-password']" routerLinkActive="router-link-active" > Recuperar contraseña</a></p> -->
+                  </div>
+                 
+            </div>
+        </div>
+    </div>
+</div>
+

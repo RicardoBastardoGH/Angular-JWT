@@ -1,0 +1,123 @@
+<div class="ng-containe">
+  
+<table datatable [dtOptions]="dtOptions" yclass="row-border hover">
+  <thead>
+    <tr>
+      <th>_id</th>
+      <th>name</th>
+      <th>rif</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>address</th>
+      <th>razon_social</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of companies">
+      <td>{{ company._id }}</td>
+      <td>{{ company.name }}</td>
+      <td>{{ company.rif }}</td>
+      <td>{{ company.email }}</td>
+      <td>{{ company.phone }}</td>
+      <td>{{ company.address }}</td>
+      <td>{{ company.razon_social }}</td>
+      
+    </tr>
+  </tbody>
+</table>
+</div>
+
+  <!-- Card Deck -->
+<div class="card-deck mt-5">
+  <!-- Card -->
+  <div class="card bg-info text-white">
+      <div class="card-header">
+          <h3 class="card-title">Seleccionar  Compañia 
+              <span style="font-size: 3em; color: Tomato;">  
+              <i  id="userIcon" class="fa fa-user-o float-right text-white"></i>
+              </span>
+          </h3>
+      </div>
+      <div class="card-body ">
+        <form [formGroup]="idForm" (ngSubmit)="companyOptions()">
+          <fieldset>
+           <!--  <legend class="text-center">Establecer porcentaje de comision</legend> -->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Id de compañia a consultar</label>
+              <input type="text" class="form-control" id="exampleInputComision1" placeholder="Introduzca nuevo porcentaje de comision" 
+                      formControlName="companyId">
+            </div>
+          <button type="submit" class="btn btn-primary btn-large btn-block">Consultar</button>
+                  </fieldset>
+            </form>  
+        </div>
+    </div>
+    <!-- End Card -->
+  <!-- Card -->
+  <div class="card bg-warning text-white">
+    <div class="card-header">
+        <h3 class="card-title">Registro de Compañias 
+            <span style="font-size: 3em; color: Tomato;">  
+            <i  id="userIcon" class="fa fa-user-o float-right text-white"></i>
+            </span>
+        </h3>
+    </div>
+    <div class="card-body ">
+      <form [formGroup]="idForm" (ngSubmit)="agregarCompany()">
+        <fieldset>
+         <!--  <legend class="text-center">Establecer porcentaje de comision</legend> -->
+          <div class="form-group">
+            <label for="exampleInputPassword1">Registre una Nueva Compañia</label>
+          </div>
+        <button type="submit" class="btn btn-primary btn-large btn-block">Registrar</button>
+                </fieldset>
+          </form>  
+      </div>
+  </div>
+  <!-- End Card -->
+
+    <!-- Card -->
+<!--     <div class="card bg-warning text-white">
+      <div class="card-header" >
+          <h3 class="card-title">Registro de Compañias
+              <span style="font-size: 2.8em; color: Tomato;">  
+              <i class="fa fa-edit float-right text-white">   </i>
+              </span>
+          </h3>
+      </div>
+    <div class="card-body ">
+      <label for="exampleInputPassword1"> </label>
+      <button type="submit" class="btn btn-primary btn-large btn-block">Registrar!</button>
+    </div>
+    </div>
+ --> <!-- End Card -->
+    <!-- Card -->
+  <div class="card bg-danger text-white">
+      <div class="card-header">
+          <h3 class="card-title"> Eliminar Compañia
+              <span style="font-size: 3em; color: Tomato;">  
+              <i id="userIcon" class="fa fa-file-text-o float-right text-white"></i>
+              </span>
+          </h3>
+      </div>
+    
+      <div class="card-body">
+
+      <form [formGroup]="idFormDelete" (ngSubmit)="deleteCompany()">
+        <fieldset>
+         <!--  <legend class="text-center">Establecer porcentaje de comision</legend> -->
+          <div class="form-group">
+            <label for="exampleInputPassword1">Id de compañia a eliminar</label>
+            <input type="text" class="form-control" id="exampleInputComision2" placeholder="Introduzca nuevo porcentaje de comision" 
+                    formControlName="companyId">
+          </div>
+        <button type="submit" class="btn btn-primary btn-large btn-block">Eliminar</button>
+      </fieldset>
+    </form> 
+
+    </div>
+  </div>
+  <!-- End Card -->
+</div>
+
